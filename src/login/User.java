@@ -17,15 +17,13 @@ public class User
             String url = "jdbc:mysql://127.0.0.1/uiux_db?user=joao&password=senha123";
             conn = DriverManager.getConnection(url);
         }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-        }
+        catch (Exception e) { }
         return conn;
     }
     public String nome = "";
     public boolean result = false;
 
+    // Método de verificar usuário
     public boolean verificarUsuario(String login, String senha)
     {
         String sql = "";
@@ -45,10 +43,7 @@ public class User
                 nome = rs.getString("nome");
             }
         }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-        }
+        catch (Exception e) { }
         return result;
     }
 }
